@@ -1,7 +1,7 @@
 import React from "react";
 import { ToastContainer } from "react-toastify";
 import Router from "../../Router/Router";
-import Navbar from "../Navbar/navbar";
+import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
 const Layout = () => {
