@@ -1,0 +1,148 @@
+.intro {
+  width: 100%;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    height: 570px;
+    margin: 50px auto;
+    border-radius: 20px;
+    background: #3f3f40;
+    background: linear-gradient(90deg, #3f3f40, #5b5858);
+    overflow: hidden;
+
+    @media (max-width: 1500px) {
+      width: 80%;
+    }
+
+    @media (max-width: 500px) {
+      width: 90%;
+    }
+  }
+
+  &__left {
+    position: relative;
+    width: 100%;
+  }
+
+  &__img {
+    position: absolute;
+    top: -250px;
+    width: 1200px;
+    z-index: 100;
+  }
+
+  &__right {
+    text-align: end;
+    margin-right: 100px;
+  }
+
+  &__toptitle {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  &__title {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  &__bottomtitle {
+    font-size: 8rem;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 1500px) {
+    &__container {
+      width: 80%;
+      height: 300px;
+    }
+
+    &__img {
+      top: -150px;
+      width: 700px;
+    }
+
+    &__subtitle {
+      font-size: 1.5rem;
+    }
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__bottomtitle {
+      font-size: 3rem;
+    }
+  }
+  @media (max-width: 800px) {
+    &__img {
+      top: -100px;
+      width: 500px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    &__container {
+      height: 250px;
+    }
+
+    &__img {
+      top: -70px;
+      width: 400px;
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+      color: #f5f5f5;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      color: #f5f5f5;
+    }
+
+    &__bottomtitle {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    &__container {
+      height: 200px;
+    }
+
+    &__img {
+      top: -80px;
+      width: 300px;
+      z-index: 0;
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+      color: #f5f5f5;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      color: #f5f5f5;
+    }
+
+    &__bottomtitle {
+      font-size: 2rem;
+      color: #f5f5f5;
+    }
+  }
+
+  @media (max-width: 400px) {
+    &__container {
+      padding: 20px;
+    }
+  }
+}

@@ -6,9 +6,18 @@
     align-items: center;
     justify-content: space-between;
     margin: 50px auto;
-    width: 100%; /* Kenglikni o'chiramiz va moslashtiramiz */
-    padding: 0 20px;
+    width: 100%;
+    max-width: 1300px;
     box-sizing: border-box;
+
+    @media (max-width: 1500px) {
+      width: 80%;
+      padding: 0;
+    }
+
+    @media (max-width: 500px) {
+      width: 90%;
+    }
   }
 
   &__left,
@@ -68,22 +77,22 @@
     font-size: 18px;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 955px) {
     .navbar__container {
       justify-content: space-between;
       padding: 0 10px;
     }
 
     .navbar__links {
-      display: none; /* Mobil ekranlarda linklar ko'rinmasligi uchun */
+      display: none;
     }
 
     .navbar__burger {
-      display: flex; /* Burger tugmasi faqat mobil ekranlar uchun ko'rinadi */
+      display: flex;
     }
 
     .navbar__language {
-      display: none; /* Mobil ekranlarda til tanlash yashiriladi */
+      display: none;
     }
   }
 
@@ -103,8 +112,6 @@
     }
   }
 }
-
-/* Modal Stilleri */
 .modal {
   position: fixed;
   top: 0;
@@ -116,7 +123,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  overflow: hidden; /* Scrollning oldini olish uchun */
+  overflow: hidden;
 }
 
 .modal__content {

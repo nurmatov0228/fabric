@@ -5,8 +5,6 @@ import logo from "../../../public/pngwing.com.png";
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Scrollni o'chirish va yoqish
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = "hidden"; // Scrollni o'chirish
@@ -32,16 +30,16 @@ const Navbar = () => {
           </NavLink>
           <div className="navbar__links">
             <NavLink to={"/"} className={"navbar__link"}>
-              Home
+              Bosh Sahifa
             </NavLink>
             <NavLink to={"/collection"} className={"navbar__link"}>
-              Colection
+              To'plam
             </NavLink>
             <NavLink to={"/about"} className={"navbar__link"}>
-              About
+              Biz Haqimizda
             </NavLink>
             <NavLink to={"/contact"} className={"navbar__link"}>
-              Contact
+              Aloqa
             </NavLink>
           </div>
         </div>
