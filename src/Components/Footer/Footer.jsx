@@ -81,7 +81,7 @@ const Footer = () => {
                   Collection
                 </a>
                 <a className="link" href="/contact">
-                  Contacts
+                  Contact
                 </a>
               </ul>
               <ul className="footer__contacts">
