@@ -58,7 +58,12 @@ const Footer = () => {
   return (
     <>
       <div className="footer">
-        <div className="footer__container">
+        <div
+          className="footer__container"
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+        >
           <div className="footer__content">
             <div className="footer__left">
               <a className="footer__logo" href="/">

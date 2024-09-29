@@ -20,64 +20,6 @@ const Contact = () => {
     setText(e.target.value);
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   if (
-  //     email.email.trim().length &&
-  //     number.number.trim().length.isNumber() &&
-  //     text.text.trim().length
-  //   ) {
-  //     const token = `7224174930:AAHfX4xYMCiylsXEZPRrKF395SLBmv3XdcU`;
-  //     const chat_id = 1308395281;
-  //     const url = `https://api.telegram.org/bot${token}/sendMessage`;
-
-  //     axios({
-  //       url: url,
-  //       method: "post",
-  //       data: {
-  //         chat_id: chat_id,
-  //         text:
-  //           "Email: " +
-  //           email.email +
-  //           " Raqam: " +
-  //           number.number +
-  //           " Xabar: " +
-  //           text.text,
-  //       },
-  //     })
-  //       .then((data) => {
-  //         toast.success("Ma'lumotlar jo'natildi", {
-  //           position: "top-right",
-  //           autoClose: 1700,
-  //           hideProgressBar: false,
-  //           closeOnClick: true,
-  //           pauseOnHover: true,
-  //           draggable: true,
-  //           progress: undefined,
-  //           theme: "dark",
-  //           transition: Bounce,
-  //         });
-  //       })
-  //       .catch((error) => {
-  //         toast.error("Jo'natishda xatolik bor", {
-  //           position: "top-right",
-  //           autoClose: 1700,
-  //           hideProgressBar: false,
-  //           closeOnClick: true,
-  //           pauseOnHover: true,
-  //           draggable: true,
-  //           progress: undefined,
-  //           theme: "dark",
-  //           transition: Bounce,
-  //         });
-  //       });
-  //     e.target.reset();
-  //   } else {
-  //     toast.warning("Input Invialid");
-  //   }
-  // };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 

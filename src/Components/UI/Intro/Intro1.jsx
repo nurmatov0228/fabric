@@ -3,7 +3,7 @@ import "./intro1.scss";
 
 const Intro1 = () => {
   return (
-    <div className="intro1">
+    <div className="intro1" data-aos="zoom-out-up" >
       <div class="intro__container">
         <div class="intro__left">
           <img

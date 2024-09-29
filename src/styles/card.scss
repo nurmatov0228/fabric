@@ -1,0 +1,291 @@
+.cart {
+  padding-top: 50px;
+
+  &__container {
+    max-width: 1300px;
+    margin: 0 auto;
+
+    @media (max-width: 1500px) {
+      width: 80%;
+    }
+
+    @media (max-width: 500px) {
+      width: 90%;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    gap: 30px;
+  }
+
+  &__img {
+    width: 700px;
+    height: 600px;
+
+    img {
+      border-radius: 20px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+
+    table {
+      border-collapse: collapse;
+
+      tr .th,
+      tr td {
+        padding: 1em 1.4em;
+        border: 1px solid rgb(187, 187, 187);
+        text-align: left;
+        font-weight: 400;
+      }
+
+      tr th {
+        width: 188px;
+      }
+
+      tr td {
+        width: 290px;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 40px;
+    letter-spacing: -1.2px;
+    line-height: 56px;
+    font-weight: 800;
+  }
+
+  &__category span {
+    color: rgb(244, 44, 55);
+  }
+
+  .Tab {
+    text-transform: none;
+  }
+  &__bottom {
+    &__box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    &__box2 {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+#tabs__form {
+  margin-top: 50px;
+  width: 100% !important;
+
+  form {
+    width: 100% !important;
+  }
+}
+
+.tab__review {
+  max-width: 960px;
+  width: 100%;
+  min-width: 960px;
+
+  @media (max-width: 1200px) {
+    min-width: 0px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 25px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 50px;
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 13px;
+      line-height: 22px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 12px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.rating__flex {
+  display: flex;
+  gap: 15px;
+  align-items: end;
+  justify-content: start;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
+.tab__product__name {
+  line-height: 30px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.6px;
+  margin-bottom: 10px;
+
+  @media (max-width: 1024px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.tab__description {
+  max-width: 960px;
+  padding-top: 60px;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    padding-top: 50px;
+    max-width: 90%;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 40px;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.tab__name {
+  font-size: 25px;
+  line-height: 23px;
+  letter-spacing: -0.75px;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+  @media (max-width: 1024px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}
+
+.tab__name__subtitle {
+  font-weight: 600;
+  font-size: 24px;
+  color: rgb(68, 68, 68);
+  margin-bottom: 20px;
+
+  @media (max-width: 1024px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}
+
+.tab__description p {
+  font-size: 15px;
+  line-height: 25px;
+  color: rgba(0, 0, 0, 0.6);
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .cart {
+    padding-top: 20px;
+
+    &__top {
+      flex-direction: column;
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cart {
+    &__info {
+      gap: 10px;
+    }
+
+    &__name {
+      font-size: 25px;
+      line-height: 35px;
+    }
+
+    &__info table {
+      font-size: 15px;
+    }
+
+    &__category span {
+      color: rgb(244, 44, 55);
+    }
+  }
+}

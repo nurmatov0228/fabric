@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div class="about">
       <div class="about__container">
-        <div class="about__left">
+        <div class="about__left" data-aos="fade-right">
           <div class="about__title">Bukhara Natural Product</div>
           <div class="about__texts">
             <p class="about__text">
