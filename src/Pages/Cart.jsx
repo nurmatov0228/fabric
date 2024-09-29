@@ -202,7 +202,7 @@ const Cart = () => {
                       sx={{ "& > legend": { mt: 2 } }}
                       className="rating__flex"
                     >
-                      <Typography component="legend">Controlled</Typography>
+                      <Typography component="legend">Your Rating:</Typography>
                       <Rating
                         name="simple-controlled"
                         value={value1}
