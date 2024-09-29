@@ -77,7 +77,7 @@ const Contact = () => {
         <div class="contacts__top ">
           <div class="contacts__left">
             <div class="contacts__title">Contact</div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} data-aos="fade-down">
               <div>
                 <input
                   type="email"
@@ -115,11 +115,13 @@ const Contact = () => {
               height="100%"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
+              data-aos="fade-up"
+              data-aos-delay="500"
             ></iframe>
           </div>
         </div>
         <div class="contacts__bottom">
-          <div class="contacts__card">
+          <div class="contacts__card" data-aos="fade-right" data-aos-delay="50">
             <div class="contacts__card__img">
               <svg
                 stroke="currentColor"
@@ -138,7 +140,11 @@ const Contact = () => {
               <a href="mailto:info@bnpfabric.uz">info@bnpfabric.uz</a>
             </div>
           </div>
-          <div class="contacts__card">
+          <div
+            class="contacts__card"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
             <div class="contacts__card__img">
               <svg
                 stroke="currentColor"
@@ -160,7 +166,11 @@ const Contact = () => {
               <a href="tel:+998 93 960 78 00">+998 93 960 78 00</a>
             </div>
           </div>
-          <div class="contacts__card">
+          <div
+            class="contacts__card"
+            data-aos="fade-right"
+            data-aos-delay="150"
+          >
             <div class="contacts__card__img">
               <svg
                 stroke="currentColor"
