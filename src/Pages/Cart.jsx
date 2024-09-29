@@ -97,6 +97,9 @@ const Cart = () => {
   const params = Number(useParams()?.id);
 
   const item = data.filter((elem) => elem?.id === params);
+
+  console.log(item[0]);
+
   const {
     id,
     name,
@@ -174,15 +177,7 @@ const Cart = () => {
                 <div class="tab__description">
                   <div class="tab__name">Description</div>
                   <div class="tab__name__subtitle">Bedding set Squares</div>
-                  <p>
-                    Bed linen is a household item and bedroom decor designed for
-                    comfort and beauty. You can choose from a variety of bed
-                    sets that include sheets, blankets, pillow crafts and other
-                    accessories. They have various designs, prints, embroideries
-                    or other design elements. They are easy and quick to clean
-                    and clean. They are made from soft materials and they make
-                    your bedrooms cozy and cozy.
-                  </p>
+                  <p>{text}</p>
                 </div>
               </TabPanel>
               <TabPanel value="2">
