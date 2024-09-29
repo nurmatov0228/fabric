@@ -10,48 +10,49 @@ const Footer = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const emailValue = emailInputRef.current.value;
-    console.log("Email submitted:", emailValue);
 
-    const token = `7224174930:AAHfX4xYMCiylsXEZPRrKF395SLBmv3XdcU`;
-    const chat_id = 1308395281;
-    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+    if (emailValue.length) {
+      const token = `7224174930:AAHfX4xYMCiylsXEZPRrKF395SLBmv3XdcU`;
+      const chat_id = 1308395281;
+      const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
-    axios({
-      url: url,
-      method: "post",
-      data: {
-        chat_id: chat_id,
-        text: `Email submitted:
+      axios({
+        url: url,
+        method: "post",
+        data: {
+          chat_id: chat_id,
+          text: `Email submitted:
         ${emailValue},`,
-      },
-    })
-      .then((data) => {
-        toast.success("Ma'lumotlar jo'natildi", {
-          position: "top-right",
-          autoClose: 1700,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          transition: Bounce,
-        });
+        },
       })
-      .catch((error) => {
-        toast.error("Jo'natishda xatolik bor", {
-          position: "top-right",
-          autoClose: 1700,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          transition: Bounce,
+        .then((data) => {
+          toast.success("Ma'lumotlar jo'natildi", {
+            position: "top-right",
+            autoClose: 1700,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+          });
+        })
+        .catch((error) => {
+          toast.error("Jo'natishda xatolik bor", {
+            position: "top-right",
+            autoClose: 1700,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+          });
         });
-      });
-    emailInputRef.current.value = "";
+      emailInputRef.current.value = "";
+    }
   };
 
   return (
@@ -86,12 +87,20 @@ const Footer = () => {
               </ul>
               <ul className="footer__contacts">
                 <li>Contacts</li>
-                <li>Bukhara, st. Alpomysh 80.</li>
+                <li>
+                  <a href="https://www.google.com/maps/@41.218867,69.206016,13z?hl=ru&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D">
+                    Bukhara, st. Alpomysh 80.
+                  </a>
+                </li>
                 <li>Bnpuz@bk.ru</li>
                 <li>bnp_fabrik</li>
                 <li>info@bnpfabric.com</li>
-                <li>+998 93 383 75 85</li>
-                <li>+998 93 960 78 00</li>
+                <li>
+                  <a href="tel:+998 93 383 75 85">+998 93 383 75 85</a>
+                </li>
+                <li>
+                  <a href="tel:+998 93 960 78 00">+998 93 960 78 00</a>
+                </li>
               </ul>
               <ul className="footer__email">
                 <li>Subscribe to our email</li>

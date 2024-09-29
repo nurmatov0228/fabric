@@ -32,6 +32,7 @@
     top: -250px;
     width: 1200px;
     z-index: 100;
+    left: -150px;
   }
 
   &__right {
@@ -67,6 +68,7 @@
     &__img {
       top: -150px;
       width: 700px;
+      left: 0;
     }
 
     &__subtitle {
@@ -113,6 +115,12 @@
     }
   }
 
+  @media (max-width: 665px) {
+    &__img {
+      z-index: 0;
+    }
+  }
+
   @media (max-width: 500px) {
     &__container {
       height: 200px;
@@ -121,7 +129,6 @@
     &__img {
       top: -80px;
       width: 300px;
-      z-index: 0;
     }
 
     &__subtitle {

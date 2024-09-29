@@ -7,9 +7,9 @@ const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   useEffect(() => {
     if (isModalOpen) {
-      document.body.style.overflow = "hidden"; // Scrollni o'chirish
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"; // Scrollni qayta yoqish
+      document.body.style.overflow = "auto";
     }
   }, [isModalOpen]);
 

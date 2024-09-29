@@ -28,17 +28,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 55px;
+    gap: 30px;
   }
 }
 
 .new {
   &__card {
-    max-width: 425px;
+    max-width: 400px;
     cursor: pointer;
 
     &__img {
-      width: 425px;
+      width: 400px;
       height: 238px;
       margin-bottom: 20px;
       img {

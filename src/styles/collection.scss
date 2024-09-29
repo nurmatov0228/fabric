@@ -45,8 +45,9 @@
         padding: 5px 0;
 
         &:hover {
-          text-decoration: underline;
-          color: #007bff;
+          color: #f42c37;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) 70ms;
+          font-weight: 700;
         }
       }
     }
@@ -56,6 +57,7 @@
     flex: 1;
     max-width: 250px;
     padding-right: 20px;
+    min-height: 372px;
 
     @media (max-width: 767px) {
       padding: 0;
