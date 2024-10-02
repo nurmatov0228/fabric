@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "../styles/contact.scss";
 import { Bounce, toast } from "react-toastify";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [text, setText] = useState("");
@@ -76,7 +78,7 @@ const Contact = () => {
       <div class="contacts__container">
         <div class="contacts__top ">
           <div class="contacts__left">
-            <div class="contacts__title">Contact</div>
+            <div class="contacts__title">{t("Contact")}</div>
             <form onSubmit={handleSubmit} data-aos="fade-down">
               <div>
                 <input
@@ -89,7 +91,7 @@ const Contact = () => {
               </div>
               <div>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Phone Number"
                   onChange={settingNumber}
                   name="number"
@@ -105,7 +107,7 @@ const Contact = () => {
                   required
                 ></textarea>
               </div>
-              <button type="submit">Submit</button>
+              <button type="submit">{t("Submit")}</button>
             </form>
           </div>
           <div class="contacts__right">

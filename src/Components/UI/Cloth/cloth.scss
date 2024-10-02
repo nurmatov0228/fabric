@@ -45,6 +45,11 @@
         width: 100%;
         height: auto;
         border-radius: 20px;
+        transition: all 0.3s linear;
+
+        &:hover {
+          box-shadow: 1px 1px 20px #000;
+        }
       }
     }
 
@@ -84,8 +89,9 @@
   .new {
     &__card {
       max-width: 90%;
-      margin-bottom: 20px;
+      // margin-bottom: 20px;
       width: 90%;
+      margin: 0 auto 20px;
 
       &__img {
         width: 100%;

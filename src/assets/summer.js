@@ -26,7 +26,7 @@ const summer = [
   },
   {
     id: 12,
-    name: "fluttering dandelion",
+    name: "fluttering",
     img: flutter,
     text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
     title: "Ikat bedding set",
@@ -110,7 +110,7 @@ const summer = [
   },
   {
     id: 18,
-    name: "Mountain cornflower",
+    name: "Mountain",
     img: Mountain,
     text: "Bed linen is a household item and bedroom decor designed for comfort and beauty. You can choose from a variety of bed sets that include sheets, blankets, pillow crafts and other accessories. They have various designs, prints, embroideries or other design elements. They are easy and quick to clean and clean. They are made from soft materials and they make your bedrooms cozy and cozy.",
     title: "Bed linen set Blue Breeze (AB)",

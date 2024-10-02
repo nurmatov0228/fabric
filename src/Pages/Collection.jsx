@@ -7,12 +7,17 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Pagination from "@mui/material/Pagination";
+import { useTranslation } from "react-i18next";
 
 const Collection = () => {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredSearchTerm, setFilteredSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState("initial");
   const [selectedCollection, setSelectedCollection] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8; // Har bir sahifadagi elementlar soni
 
   const handleSearch = () => {
     setFilteredSearchTerm(searchTerm);
@@ -41,6 +46,18 @@ const Collection = () => {
       }
     });
 
+  // Pagination logikasi
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentItems = filteredData.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
+
+  const handlePageChange = (event, page) => {
+    setCurrentPage(page);
+  };
+
   return (
     <div className="collection">
       <div className="collection__container">
@@ -58,7 +75,6 @@ const Collection = () => {
               className="collection__search__btn"
               onClick={() => {
                 handleSearch();
-                toggleNoResultsMessage();
               }}
             >
               <SearchOutlinedIcon />
@@ -70,23 +86,23 @@ const Collection = () => {
               aria-controls="panel2-content"
               id="panel2-header"
             >
-              <h3 style={{ cursor: "pointer" }}>Collection</h3>
+              <h3 style={{ cursor: "pointer" }}>{t("Collection")}</h3>
             </AccordionSummary>
             <AccordionDetails>
               <ul>
                 <li onClick={() => setSelectedCollection("Spring collection")}>
-                  Spring Collection
+                  {t("Spring Collection")}
                 </li>
                 <li onClick={() => setSelectedCollection("Winter collection")}>
-                  Winter Collection
+                  {t("Winter Collection")}
                 </li>
                 <li onClick={() => setSelectedCollection("Summer collection")}>
-                  Summer Collection
+                  {t("Summer Collection")}
                 </li>
                 <li onClick={() => setSelectedCollection("Autumn collection")}>
-                  Autumn Collection
+                  {t("Autumn Collection")}
                 </li>
-                <li onClick={() => setSelectedCollection("")}>All</li>
+                <li onClick={() => setSelectedCollection("")}>{t("All")}</li>
               </ul>
             </AccordionDetails>
           </Accordion>
@@ -95,23 +111,24 @@ const Collection = () => {
         <div className="collection__main">
           <div className="collection__header">
             <div className="collection__header__flex">
-              <h2>Collection</h2>
+              <h2>{t("Collection")}</h2>
               <span>
-                Showing {filteredData.length} of {data.length}
+                {t("Showing ")} {currentItems.length} {t("of")}{" "}
+                {filteredData.length}
               </span>
             </div>
             <select
               className="collection__sort"
               onChange={(e) => setSortOrder(e.target.value)}
             >
-              <option value="initial">Initial Sort</option>
-              <option value="asc">A-Z</option>
-              <option value="desc">Z-A</option>
+              <option value="initial">{t("Initial Sort")}</option>
+              <option value="asc">{t("A-Z")}</option>
+              <option value="desc">{t("Z-A")}</option>
             </select>
           </div>
-          {filteredData.length > 0 ? (
+          {currentItems.length > 0 ? (
             <div className="collection__flex">
-              {filteredData.map((item) => (
+              {currentItems.map((item) => (
                 <Item key={item.id} {...item} />
               ))}
             </div>
@@ -124,10 +141,20 @@ const Collection = () => {
                     alt=""
                   />
                 </div>
-                <div class="notfoundstate__message">Ma'lumotlar topilmadi</div>
+                <div class="notfoundstate__message">
+                  {t("Ma'lumotlar topilmadi")}
+                </div>
               </div>
             </div>
           )}
+          <Pagination
+            count={totalPages}
+            page={currentPage}
+            onChange={handlePageChange}
+            variant="outlined"
+            shape="rounded"
+            className="pagination"
+          />
         </div>
       </div>
     </div>

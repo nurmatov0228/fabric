@@ -2,16 +2,31 @@ import React, { useState, useEffect } from "react";
 import "./navbar.scss";
 import { NavLink } from "react-router-dom";
 import logo from "../../../public/pngwing.com.png";
+import { useTranslation } from "react-i18next";
+import "../../i18n";
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
+
+  // Tilni o'zgartirish funksiyasi
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng); // Tilni o'zgartirish
+    localStorage.setItem("language", lng); // Tanlangan tilni localStorage'ga saqlash
+  };
+
+  // Modal holati uchun state
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
-    if (isModalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
+    // Dastlabki yuklanishda localStorage'dan tilni o'qish va o'sha tilga o'zgartirish
+    const savedLanguage = localStorage.getItem("language");
+    if (savedLanguage && savedLanguage !== i18n.language) {
+      i18n.changeLanguage(savedLanguage);
     }
-  }, [isModalOpen]);
+
+    // Modal ochilganda/berkilganda scroll holatini boshqarish
+    document.body.style.overflow = isModalOpen ? "hidden" : "auto";
+  }, [isModalOpen, i18n]);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -30,25 +45,30 @@ const Navbar = () => {
           </NavLink>
           <div className="navbar__links">
             <NavLink to={"/"} className={"navbar__link"}>
-              Bosh Sahifa
+              {t("Bosh Sahifa")}
             </NavLink>
             <NavLink to={"/collection"} className={"navbar__link"}>
-              To'plam
+              {t("To'plam")}
             </NavLink>
             <NavLink to={"/about"} className={"navbar__link"}>
-              Biz Haqimizda
+              {t("Biz Haqimizda")}
             </NavLink>
             <NavLink to={"/contact"} className={"navbar__link"}>
-              Aloqa
+              {t("Aloqa")}
             </NavLink>
           </div>
         </div>
         <div className="navbar__right">
-          <select className="navbar__language">
+          {/* Select elementda onChange ishlatiladi */}
+          <select
+            className="navbar__language"
+            onChange={(e) => changeLanguage(e.target.value)}
+            value={i18n.language} // Selectda joriy tilni ko'rsatish
+          >
             <option value="en">En</option>
             <option value="ru">Ru</option>
             <option value="uz">Uz</option>
-            <option value="pl">Poland</option>
+            <option value="po">Po</option>
           </select>
           <div className="navbar__burger" onClick={toggleModal}>
             <hr className="navbar__hr" />
@@ -67,35 +87,39 @@ const Navbar = () => {
             </span>
             <div className="modal__links">
               <NavLink to={"/"} className={"navbar__link"} onClick={closeModal}>
-                Home
+                {t("Bosh Sahifa")}
               </NavLink>
               <NavLink
                 to={"/collection"}
                 className={"navbar__link"}
                 onClick={closeModal}
               >
-                Collection
+                {t("To'plam")}
               </NavLink>
               <NavLink
                 to={"/about"}
                 className={"navbar__link"}
                 onClick={closeModal}
               >
-                About
+                {t("Biz Haqimizda")}
               </NavLink>
               <NavLink
                 to={"/contact"}
                 className={"navbar__link"}
                 onClick={closeModal}
               >
-                Contact
+                {t("Aloqa")}
               </NavLink>
-              {/* Language dropdownni modalga ham qo'shamiz */}
-              <select className="navbar__language--modal">
+              {/* Modal uchun ham select element onChange bilan ishlatiladi */}
+              <select
+                className="navbar__language--modal"
+                onChange={(e) => changeLanguage(e.target.value)}
+                value={i18n.language} // Joriy tilni ko'rsatish
+              >
                 <option value="en">En</option>
                 <option value="ru">Ru</option>
                 <option value="uz">Uz</option>
-                <option value="pl">Poland</option>
+                <option value="po">Po</option>
               </select>
             </div>
           </div>

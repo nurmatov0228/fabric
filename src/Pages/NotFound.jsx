@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const NotFound = () => {
+  const { t } = useTranslation();
   return (
     <div class="notfoundstate">
       <div class="notfoundstate__content">
@@ -10,7 +12,7 @@ const NotFound = () => {
             alt=""
           />
         </div>
-        <div class="notfoundstate__message">Ma'lumotlar topilmadi</div>
+        <div class="notfoundstate__message">{t("Ma'lumotlar topilmadi")}</div>
       </div>
     </div>
   );

@@ -3,8 +3,11 @@ import "./footer.scss";
 import logo from "../../../public/pngwing.com.png";
 import { Bounce, toast } from "react-toastify";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const emailInputRef = useRef(null);
 
   const handleSubmit = (event) => {
@@ -52,6 +55,8 @@ const Footer = () => {
           });
         });
       emailInputRef.current.value = "";
+    } else {
+      toast.error("Email Invialid");
     }
   };
 
@@ -70,36 +75,43 @@ const Footer = () => {
                 <img src={logo} alt="photo" />
               </a>
               <p className="footer__logo__description">
-                'Bukhara Natural Product' has been a company that produces
-                cotton fabrics for many years for use all over the world.
+                {t(
+                  "'Bukhara Natural Product' has been a company that produces cotton fabrics for many years for use all over the world."
+                )}
               </p>
             </div>
             <div className="footer__right">
               <ul className="footer__menu">
-                <li>Menu</li>
-                <a className="link" href="/">
-                  Home
-                </a>
-                <a className="link" href="/about">
-                  About Us
-                </a>
-                <a className="link" href="/collection">
-                  Collection
-                </a>
-                <a className="link" href="/contact">
-                  Contact
-                </a>
+                <li>{t("Menu")}</li>
+                <NavLink className="link" to={"/"}>
+                  {t("Home")}
+                </NavLink>
+                <NavLink className="link" to={"/about"}>
+                  {t("About Us")}
+                </NavLink>
+                <NavLink className="link" to={"/collection"}>
+                  {t("Collection")}
+                </NavLink>
+                <NavLink className="link" to={"/contact"}>
+                  {t("Contact")}
+                </NavLink>
               </ul>
               <ul className="footer__contacts">
-                <li>Contacts</li>
+                <li>{t("Contacts")}</li>
                 <li>
                   <a href="https://www.google.com/maps/@41.218867,69.206016,13z?hl=ru&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D">
                     Bukhara, st. Alpomysh 80.
                   </a>
                 </li>
-                <li>Bnpuz@bk.ru</li>
-                <li>bnp_fabrik</li>
-                <li>info@bnpfabric.com</li>
+                <li>
+                  <a href="mailto:Bnpuz@bk.ru">Bnpuz@bk.ru</a>
+                </li>
+                <li>
+                  <a href="mailto:bnp_fabrik">bnp_fabrik</a>
+                </li>
+                <li>
+                  <a href="mailto:info@bnpfabric.com">info@bnpfabric.com</a>
+                </li>
                 <li>
                   <a href="tel:+998 93 383 75 85">+998 93 383 75 85</a>
                 </li>
@@ -108,7 +120,7 @@ const Footer = () => {
                 </li>
               </ul>
               <ul className="footer__email">
-                <li>Subscribe to our email</li>
+                <li>{t("Subscribe to our email")}</li>
                 <li>
                   <form onSubmit={handleSubmit}>
                     <input
@@ -118,7 +130,7 @@ const Footer = () => {
                       name="email"
                       placeholder="Enter Your Email"
                     />
-                    <button type="submit">Subscribe</button>
+                    <button type="submit">{t("Subscribe")}</button>
                   </form>
                 </li>
               </ul>
@@ -128,8 +140,8 @@ const Footer = () => {
         <div className="footer__bottom">
           <div className="footer__bottom__container">
             <p className="footer__bottom__title">
-              © {new Date().getFullYear()} LLC "BUKHARA NATURAL PRODUCT". All
-              rights reserved.
+              © {new Date().getFullYear()}{" "}
+              {t(" LLC 'BUKHARA NATURAL PRODUCT'. All rights reserved.")}
             </p>
           </div>
         </div>

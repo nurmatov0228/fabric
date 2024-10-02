@@ -6,6 +6,7 @@ import Collection from "../Pages/Collection";
 import NotFound from "../Pages/NotFound";
 import Contact from "../Pages/Contact";
 import Cart from "../Pages/Cart";
+import NewCart from "../Pages/NewCart";
 
 const Router = () => {
   return (
@@ -15,7 +16,8 @@ const Router = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/collection" element={<Collection />} />
-        <Route path="element/:id" element={<Cart />} />
+        <Route path="/element/:id" element={<Cart />} />
+        <Route path="/news/:id" element={<NewCart />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

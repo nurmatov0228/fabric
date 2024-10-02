@@ -1,7 +1,9 @@
 import React from "react";
 import "./delivery.scss";
+import { useTranslation } from "react-i18next";
 
 const Delivery = () => {
+  const { t } = useTranslation();
   return (
     <div class="delivery">
       <div class="delivery__container">
@@ -14,9 +16,9 @@ const Delivery = () => {
               />
             </div>
             <div class="delivery__card__texts">
-              <div class="delivery__card__title">Free shipping</div>
+              <div class="delivery__card__title">{t("Free shopping")}</div>
               <div class="delivery__card__description">
-                Free shipping on all orders
+                {t("Free shopping on all orders")}
               </div>
             </div>
           </div>
@@ -28,8 +30,10 @@ const Delivery = () => {
               />
             </div>
             <div class="delivery__card__texts">
-              <div class="delivery__card__title">Return Guarantee</div>
-              <div class="delivery__card__description">30 day money back</div>
+              <div class="delivery__card__title">{t("Return Guarantee")}</div>
+              <div class="delivery__card__description">
+                {t("30 day money back")}
+              </div>
             </div>
           </div>
           <div class="delivery__card" data-aos="fade-up">
@@ -40,9 +44,9 @@ const Delivery = () => {
               />
             </div>
             <div class="delivery__card__texts">
-              <div class="delivery__card__title">Online support 24/7</div>
+              <div class="delivery__card__title">{t("Online support")}24/7</div>
               <div class="delivery__card__description">
-                Technical support 24/7
+                {t("Technical support")} 24/7
               </div>
             </div>
           </div>
@@ -54,9 +58,9 @@ const Delivery = () => {
               />
             </div>
             <div class="delivery__card__texts">
-              <div class="delivery__card__title">Secure payment</div>
+              <div class="delivery__card__title">{t("Secure payment")}</div>
               <div class="delivery__card__description">
-                All payment methods accepted
+                {t("All payment methods accepted")}
               </div>
             </div>
           </div>

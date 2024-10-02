@@ -10,8 +10,10 @@ import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
 import { Bounce, toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const Cart = () => {
+  const { t } = useTranslation();
   const [value, setValue] = React.useState("1");
   const [value1, setValue1] = React.useState();
 
@@ -51,7 +53,7 @@ const Cart = () => {
             number +
             " Xabar: " +
             text1 +
-            "Rating: " +
+            " Rating: " +
             value1 +
             " stars",
         },
@@ -97,9 +99,6 @@ const Cart = () => {
   const params = Number(useParams()?.id);
 
   const item = data.filter((elem) => elem?.id === params);
-
-  console.log(item[0]);
-
   const {
     id,
     name,
@@ -126,32 +125,32 @@ const Cart = () => {
             <div class="cart__name">{name}</div>
             <table>
               <tr>
-                <td class="th">Material</td>
+                <td class="th">{t("Material")}</td>
                 <td>{Material}</td>
               </tr>
               <tr>
-                <td class="th">Pillowcase</td>
+                <td class="th">{t("Pillowcase")}</td>
                 <td>{Pillowcase}</td>
               </tr>
               <tr>
-                <td class="th">Bed Sheet</td>
+                <td class="th">{t("Bed Sheet")}</td>
                 <td>{sheet}</td>
               </tr>
               <tr>
-                <td class="th">Duvet Cover</td>
+                <td class="th">{t("Duvet Cover")}</td>
                 <td>{Duvet}</td>
               </tr>
               <tr>
-                <td class="th">Size</td>
+                <td class="th">{t("Size")}</td>
                 <td>{Size}</td>
               </tr>
               <tr>
-                <td class="th">Manufacturer</td>
+                <td class="th">{t("Manufacturer")}</td>
                 <td>{Manufacturer}</td>
               </tr>
             </table>
             <div class="cart__category">
-              Category: <span>{category}</span>
+              {t("Category: ")} <span>{category}</span>
             </div>
           </div>
         </div>
@@ -169,27 +168,30 @@ const Cart = () => {
                   onChange={handleChange}
                   aria-label="lab API tabs example"
                 >
-                  <Tab label="Description" value="1" className="Tab" />
-                  <Tab label="Reviews (0)" value="2" className="Tab" />
+                  <Tab label={t("Description")} value="1" className="Tab" />
+                  <Tab label={t("Reviews ") + 0} value="2" className="Tab" />
                 </TabList>
               </Box>
               <TabPanel value="1">
                 <div class="tab__description">
-                  <div class="tab__name">Description</div>
-                  <div class="tab__name__subtitle">Bedding set Squares</div>
+                  <div class="tab__name">{t("Description")}</div>
+                  <div class="tab__name__subtitle">
+                    {t("Bedding set Squares")}
+                  </div>
                   <p>{text}</p>
                 </div>
               </TabPanel>
               <TabPanel value="2">
                 <div className="tab__review">
-                  <div className="tab__name">Reviews</div>
-                  <p>There are no reviews yet</p>
+                  <div className="tab__name">{t("Reviews")}</div>
+                  <p>{t("There are no reviews yet")}</p>
                   <div className="tab__product__name">
-                    Be the first to review "{name}"
+                    {t("Be the first to review ")}"{name}"
                   </div>
                   <div className="remember">
-                    Your email address will not published. Required fields are
-                    marked*
+                    {t(
+                      "Your email address will not published. Required fields are marked*"
+                    )}
                   </div>
 
                   <div className="rating">
@@ -197,7 +199,9 @@ const Cart = () => {
                       sx={{ "& > legend": { mt: 2 } }}
                       className="rating__flex"
                     >
-                      <Typography component="legend">Your Rating:</Typography>
+                      <Typography component="legend">
+                        {t("Your Rating:")}
+                      </Typography>
                       <Rating
                         name="simple-controlled"
                         value={value1}
@@ -220,7 +224,7 @@ const Cart = () => {
                       </div>
                       <div>
                         <input
-                          type="text"
+                          type="number"
                           placeholder="Phone Number"
                           onChange={settingNumber}
                           name="number"
@@ -236,7 +240,7 @@ const Cart = () => {
                           required
                         ></textarea>
                       </div>
-                      <button type="submit">Submit</button>
+                      <button type="submit">{t("Submit")}</button>
                     </form>
                   </div>
                 </div>
