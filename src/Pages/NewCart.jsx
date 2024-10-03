@@ -13,6 +13,7 @@ const NewCart = () => {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [text1, setText] = useState("");
+  const [value1, setValue1] = React.useState();
 
   const settingEmail = (e) => {
     setEmail(e.target.value);
